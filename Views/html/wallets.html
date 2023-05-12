@@ -1,0 +1,384 @@
+<div class="d-flex  gap-3 body" style="padding:16px 3px;">
+    <div class="flex-column col-md-2" style="border-right: 1px solid rgba(0, 153, 102 , 0.2);">
+        <div class="d-flex align-items-center gap-8 button-cursor wallet-transfer" id="wallet-group" data-toggle="modal" data-target="#create_group_wallet">
+            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 448 448">
+                <path d="M432.3,38.02c0-12.32-9.99-22.32-22.32-22.32H97.53c-12.32,0-22.32,9.99-22.32,22.32v22.32H350.47c20.53,.03,37.17,16.66,37.2,37.2V372.78h22.32c12.32,0,22.32-9.99,22.32-22.32V38.02Z" fill="#4fffa3"/>
+                <path d="M372.78,97.53c0-12.32-9.99-22.32-22.32-22.32H38.02c-12.32,0-22.32,9.99-22.32,22.32V409.98c0,12.32,9.99,22.32,22.32,22.32H350.47c12.32,0,22.32-9.99,22.32-22.32V97.53Zm-64,166.63h-104.13v104.13c0,5.75-4.66,10.41-10.41,10.41s-10.41-4.66-10.41-10.41v-104.13H79.71c-5.75,0-10.41-4.66-10.41-10.41s4.66-10.41,10.41-10.41h104.13v-104.13c0-5.75,4.66-10.41,10.41-10.41s10.41,4.66,10.41,10.41v104.13h104.13c5.75,0,10.41,4.66,10.41,10.41s-4.66,10.41-10.41,10.41Z" fill="#4fffa3"/>
+            </svg>
+            <span class="font-12">Create Group</span>
+        </div>
+        <input type="hidden" value="" id="selected_wallet_group" />
+        <div class="d-flex flex-column group-list" id="wallets_groups" style="overflow-y: auto; height: 860px;">
+            <div class="align-items-center justify-content-between selected button-cursor wallet-transfer wallets-group active" style="margin-top:10px">
+                <span class="text-gray font-11">All groups</span>
+            </div>
+        </div>
+    </div>
+      <!-- Tab panes -->
+
+    <div class="tab-content flex-column col-md-10 gap-3 align-items-center tab-pane w-100 active">
+        <div class="d-flex align-items-center justify-content-between wallet-header" style="padding:10px">
+            <span class="text-white font-14" id="group_wallet_name">Wallets</span>
+           </div>
+            <div class="d-grid align-items-center content-wallet-header w-100">
+                <span class="text-gray font-11">Address</span>
+                <span class="text-gray font-11">Name</span>
+                <span class="text-gray font-11">Network</span>
+                <span class="text-gray font-11">Balance</span>
+                <span class="text-gray font-11" id="action">Action</span>
+
+            </div>
+            <div id="wallet-content" style="overflow-y: auto; height: 690px;">
+
+            </div>
+            <div class="d-flex align-items-center justify-content-between opensea-content-bottom-header">
+                <div class="d-flex align-items-center gap-14">
+                    <div class="d-flex align-items-center button-cursor create-wallet"  id="open_createwallet">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path opacity="0.4" d="M20 10.0048C20 15.5137 15.5116 20 10 20C4.48842 20 0 15.5137 0 10.0048C0 4.48625 4.48842 0 10 0C15.5116 0 20 4.48625 20 10.0048Z" fill="white"/>
+                            <rect x="9.42859" y="5.14288" width="1.71429" height="10.2857" rx="0.857143" fill="white"/>
+                            <rect x="5.14282" y="11.1428" width="1.71429" height="10.2857" rx="0.857143" transform="rotate(-90 5.14282 11.1428)" fill="white"/>
+                        </svg>
+                        <span class="text-white font-12" style="padding-left: 3px;"> Create wallets</span>
+                    </div>
+                    <div class="borders"></div>
+                </div>
+                <div class="d-flex align-items-center gap-8">
+                    <div class="d-flex align-items-center gap-8 button-cursor wallet-transfer" data-toggle="modal" data-target="#multisend_wallet">
+                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 325 325">
+                            <path d="M127.74,40.53c.4,16.02,13.76,28.69,29.84,28.29,16.09-.4,28.81-13.71,28.41-29.73-.4-16.02-13.76-28.69-29.84-28.3-16.09,.4-28.81,13.71-28.41,29.74Z" fill="#4fffa3"/>
+                            <path d="M140.8,260.53c13.67-8.46,31.63-4.27,40.12,9.35,8.48,13.62,4.28,31.51-9.39,39.97-13.67,8.45-31.64,4.27-40.12-9.35-8.48-13.62-4.28-31.51,9.39-39.97Z" fill="#4fffa3"/>
+                            <path d="M96.06,141.69c-14.08-7.77-31.81-2.7-39.61,11.32-7.8,14.02-2.72,31.68,11.36,39.45,14.07,7.77,31.81,2.7,39.61-11.32,7.8-14.02,2.72-31.68-11.35-39.46Z" fill="#4fffa3"/>
+                            <rect x="174.14" y="10.11" width="10.04" height="138.98" rx=".41" ry=".41" transform="translate(-15.56 102.35) rotate(-30.62)" fill="#4fffa3"/>
+                            <rect x="173.63" y="175.26" width="10.04" height="143.78" rx=".41" ry=".41" transform="translate(148.44 -56.31) rotate(30.18)" fill="#4fffa3"/>
+                            <rect x="124.76" y="95.99" width="10.04" height="140.72" rx=".41" ry=".41" transform="translate(289.52 28.51) rotate(87.17)" fill="#4fffa3"/>
+                            <path d="M191.77,183.52c12.09,20.43,38.53,27.16,59.04,15.02,20.52-12.14,27.34-38.55,15.24-58.98-12.1-20.44-38.53-27.16-59.04-15.02-20.52,12.14-27.34,38.55-15.24,58.99Z" fill="#0e9662"/>
+                          </svg>
+
+                        <span class="font-12">muti-send</span>
+
+                   </div>
+                    <div class="d-flex align-items-center gap-8 button-cursor wallet-transfer" data-toggle="modal" data-target="#distribute_wallet">
+                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 325 325">
+                            <rect x="120.36" y="118.26" width="9.82" height="163.4" rx=".41" ry=".41" transform="translate(-81.64 86.54) rotate(-29.2)" fill="#4fffa3"/>
+                            <rect x="120.79" y="36.77" width="9.82" height="167.81" rx=".41" ry=".41" transform="translate(81.84 -47.97) rotate(31.59)" fill="#4fffa3"/>
+                            <rect x="147.48" y="70.87" width="9.82" height="172.98" rx=".41" ry=".41" transform="translate(307.85 3.04) rotate(89.29)" fill="#4fffa3"/>
+                            <path d="M138.69,137.49c-11.33-20.26-37-27.48-57.35-16.1-20.35,11.37-27.65,37.02-16.32,57.28,11.33,20.27,37,27.48,57.35,16.11,20.35-11.37,27.65-37.02,16.32-57.29Z" fill="#4fffa3"/>
+                            <path d="M197.82,278.79c0-15.67-12.75-28.38-28.49-28.38s-28.49,12.71-28.49,28.38,12.75,28.38,28.49,28.38,28.49-12.71,28.49-28.38Z" fill="#0e9662"/>
+                            <path d="M190.37,63.44c-13.57,7.93-31.02,3.41-38.99-10.11-7.96-13.52-3.42-30.9,10.15-38.84,13.57-7.93,31.02-3.41,38.99,10.11,7.96,13.51,3.42,30.9-10.15,38.84Z" fill="#0e9662"/>
+                            <path d="M231.23,180.68c13.57,7.93,31.02,3.41,38.99-10.11,7.96-13.51,3.42-30.9-10.15-38.84-13.57-7.93-31.02-3.41-38.99,10.11-7.96,13.52-3.42,30.9,10.15,38.84Z" fill="#0e9662"/>
+                          </svg>
+
+                        <span class="font-12">Distribute</span>
+
+                   </div>
+                    <div class="d-flex align-items-center gap-8 button-cursor wallet-transfer" id="delete-all-wallets">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                width="15px" height="15px" viewBox="0 0 15 15" style="enable-background:new 0 0 15 15;" xml:space="preserve">
+                            <style type="text/css">
+                                .st0{fill:#663333;stroke:#CC6666;stroke-width:0.5;stroke-miterlimit:10;}
+                                .st1{fill:#CC6666;}
+                            </style>
+                            <circle class="st0" cx="7.5" cy="7.5" r="7.1"/>
+                            <g>
+                                <path class="st1" d="M6.4,4.8c0-0.2,0.2-0.3,0.4-0.3h1.5c0.2,0,0.4,0.1,0.4,0.3v0.4h0.3V4.8c0-0.3-0.3-0.6-0.6-0.6H6.8
+                                    c-0.3,0-0.6,0.3-0.6,0.6v0.4h0.3V4.8z"/>
+                                <path class="st1" d="M5.9,10.9h3.1c0.3,0,0.5-0.3,0.5-0.6V6.2H5.4v4.1C5.4,10.6,5.6,10.9,5.9,10.9z"/>
+                                <path class="st1" d="M5.3,6h4.5c0.2,0,0.3-0.1,0.3-0.3S9.9,5.3,9.7,5.3H5.3c-0.2,0-0.3,0.1-0.3,0.3S5.1,6,5.3,6z"/>
+                            </g>
+                        </svg>
+                        <span class="font-12">Delete</span>
+
+                    </div>
+
+                </div>
+            </div>
+    </div>
+
+    <div class="modal" tabindex="-1" role="dialog" id="generate_wallet">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content modal-bg">
+            <div class="modal-header text-center">
+              <h5 class="text-white font-14">Generate Wallets</h5>
+              <div class="">
+                <div class="" data-bs-dismiss="modal" data-dismiss="modal">
+                    <img src="../assets/img/close.png" alt="" class="home1">
+                </div>
+              </div>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                    <!-- <select class="h-50 d-inline-block form-select" id="select_network" aria-label="Network">
+                        <option selected>Select Network</option>
+                        <option value="ethereum">Ethereum</option>
+                         <option value="polygon">Ethereum</option>
+                    </select> -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                        <input type="number" class="form-text"  id="nb_wallet" name="nb_wallet"  placeholder="Enter number of wallets">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%">
+                        <input type="text" class="form-text"  id="wallet_name" name="wallet_wallet" placeholder="Enter Friendly name">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer ">
+                <div class="d-flex justify-content-center button-cursor create-wallet" id="create-wallet">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path opacity="0.4" d="M20 10.0048C20 15.5137 15.5116 20 10 20C4.48842 20 0 15.5137 0 10.0048C0 4.48625 4.48842 0 10 0C15.5116 0 20 4.48625 20 10.0048Z" fill="white"/>
+                        <rect x="9.42859" y="5.14288" width="1.71429" height="10.2857" rx="0.857143" fill="white"/>
+                        <rect x="5.14282" y="11.1428" width="1.71429" height="10.2857" rx="0.857143" transform="rotate(-90 5.14282 11.1428)" fill="white"/>
+                    </svg>
+                    <span class="text-white font-14">Create Wallets</span>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="modal" tabindex="-1" role="dialog" id="transfer_wallet">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content modal-bg">
+            <div class="modal-header text-center">
+              <h5 class="text-white font-14">Distribute</h5>
+              <div class="">
+                <div class="" data-dismiss="modal">
+                    <img src="../assets/img/close.png" alt="" class="home1">
+                </div>
+              </div>
+
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                    <select class="h-50 d-inline-block form-select" id="select_network_transfer" aria-label="Network">
+                        <option selected>Select Network</option>
+                        <option value="ethereum">Ethereum</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                        <select class="h-50 d-inline-block form-select wallets-list" id="from_wallet" aria-label="from wallet">
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                        <select class="h-50 d-inline-block form-select wallets-list" id="to_wallet"  aria-label="to wallet">
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                        <input type="number" id="amount" name="amount"  class="form-text"  placeholder="Enter amount to transfer">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer ">
+                <div class="d-flex align-items-center gap-8 button-cursor wallet-transfer" id="transfer-wallet">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path opacity="0.4" d="M22 12.0048C22 17.5137 17.5116 22 12 22C6.48842 22 2 17.5137 2 12.0048C2 6.48625 6.48842 2 12 2C17.5116 2 22 6.48625 22 12.0048" fill="#4FFFA3"/>
+                        <path opacity="0.4" d="M10.4177 12.4959L8.87636 12.6323C8.53045 12.6323 8.25 12.3491 8.25 11.9998C8.25 11.6505 8.53045 11.3673 8.87636 11.3673L10.4177 11.5037C10.6891 11.5037 10.9091 11.7258 10.9091 11.9998C10.9091 12.2743 10.6891 12.4959 10.4177 12.4959Z" fill="#4FFFA3"/>
+                        <path d="M15.5937 12.4709C15.5696 12.4952 15.4796 12.598 15.3951 12.6834C14.9019 13.2181 13.6142 14.0924 12.9405 14.36C12.8383 14.4027 12.5796 14.4936 12.441 14.5C12.3087 14.5 12.1824 14.4692 12.0619 14.4087C11.9115 14.3238 11.7915 14.1897 11.7251 14.0319C11.6828 13.9226 11.6165 13.5945 11.6165 13.5885C11.5506 13.23 11.5146 12.6471 11.5146 12.0028C11.5146 11.3896 11.5506 10.8305 11.6046 10.4661C11.6106 10.4597 11.6769 10.0526 11.7492 9.91307C11.8815 9.65789 12.1401 9.5 12.4169 9.5H12.441C12.6215 9.50597 13.0005 9.66431 13.0005 9.66982C13.6383 9.9374 14.8955 10.7695 15.401 11.3226C15.401 11.3226 15.5437 11.4648 15.6055 11.5534C15.7019 11.681 15.7501 11.8389 15.7501 11.9968C15.7501 12.173 15.696 12.3369 15.5937 12.4709Z" fill="#4FFFA3"/>
+                    </svg>
+
+                    <span class="text-white font-14">Transfer</span>
+                </div>
+
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="modal" tabindex="-1" role="dialog" id="multisend_wallet">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content modal-bg">
+              <div class="modal-header text-center">
+                <h5 class="text-white font-14">Multi send</h5>
+                <div class="">
+                  <div class="" data-dismiss="modal">
+                      <img src="../assets/img/close.png" alt="" class="home1">
+                  </div>
+                </div>
+
+              </div>
+              <div class="modal-body">
+                  <!-- <div class="row">
+                      <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                      <select class="h-50 d-inline-block form-select" id="select_network_multisend" aria-label="Network">
+                          <option selected value="">Select Network</option>
+                          <option value="ethereum">Ethereum</option>
+                      </select>
+                      </div>
+                  </div> -->
+                  <div class="row">
+                      <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                          <select class="h-50 d-inline-block form-select wallets-list" id="multisend_from_wallet" aria-label="from wallet" data-mdb-placeholder="Example placeholder" multiple>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                          <select class="h-50 d-inline-block form-select wallets-list" id="multisend_to_wallet"  aria-label="to wallet" >
+                            <option value="">send to wallet</option>
+                          </select>
+                      </div>
+                  </div>
+              </div>
+              <div class="modal-footer ">
+                  <div class="d-flex align-items-center gap-8 button-cursor wallet-transfer" id="multisend_wallet_button">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path opacity="0.4" d="M22 12.0048C22 17.5137 17.5116 22 12 22C6.48842 22 2 17.5137 2 12.0048C2 6.48625 6.48842 2 12 2C17.5116 2 22 6.48625 22 12.0048" fill="#4FFFA3"/>
+                          <path opacity="0.4" d="M10.4177 12.4959L8.87636 12.6323C8.53045 12.6323 8.25 12.3491 8.25 11.9998C8.25 11.6505 8.53045 11.3673 8.87636 11.3673L10.4177 11.5037C10.6891 11.5037 10.9091 11.7258 10.9091 11.9998C10.9091 12.2743 10.6891 12.4959 10.4177 12.4959Z" fill="#4FFFA3"/>
+                          <path d="M15.5937 12.4709C15.5696 12.4952 15.4796 12.598 15.3951 12.6834C14.9019 13.2181 13.6142 14.0924 12.9405 14.36C12.8383 14.4027 12.5796 14.4936 12.441 14.5C12.3087 14.5 12.1824 14.4692 12.0619 14.4087C11.9115 14.3238 11.7915 14.1897 11.7251 14.0319C11.6828 13.9226 11.6165 13.5945 11.6165 13.5885C11.5506 13.23 11.5146 12.6471 11.5146 12.0028C11.5146 11.3896 11.5506 10.8305 11.6046 10.4661C11.6106 10.4597 11.6769 10.0526 11.7492 9.91307C11.8815 9.65789 12.1401 9.5 12.4169 9.5H12.441C12.6215 9.50597 13.0005 9.66431 13.0005 9.66982C13.6383 9.9374 14.8955 10.7695 15.401 11.3226C15.401 11.3226 15.5437 11.4648 15.6055 11.5534C15.7019 11.681 15.7501 11.8389 15.7501 11.9968C15.7501 12.173 15.696 12.3369 15.5937 12.4709Z" fill="#4FFFA3"/>
+                      </svg>
+
+                      <span class="text-white font-14">Transfer</span>
+                  </div>
+
+              </div>
+            </div>
+          </div>
+    </div>
+     <div class="modal" tabindex="-1" role="dialog" id="SingleImport_wallet">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content modal-bg">
+            <div class="modal-header text-center">
+              <h5 class="text-white font-14">Import Wallet</h5>
+              <div class="">
+                <div class="" data-bs-dismiss="modal" data-dismiss="modal">
+                    <img src="../assets/img/close.png" alt="" class="home1">
+                </div>
+              </div>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                     <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                    <!-- <select class="h-50 d-inline-block form-select" id="Import_select_network" aria-label="Network">
+                        <option selected>Select Network</option>
+                        <option value="ethereum">Ethereum</option>
+                    </select> -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%">
+                        <input type="text" class="form-text"  id="walletPrivateKey_name" name="walletPrivateKey_wallet" placeholder="Enter Private Key">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer ">
+                <div class="d-flex justify-content-center button-cursor create-wallet" id="import-wallet_button">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path opacity="0.4" d="M20 10.0048C20 15.5137 15.5116 20 10 20C4.48842 20 0 15.5137 0 10.0048C0 4.48625 4.48842 0 10 0C15.5116 0 20 4.48625 20 10.0048Z" fill="white"/>
+                        <rect x="9.42859" y="5.14288" width="1.71429" height="10.2857" rx="0.857143" fill="white"/>
+                        <rect x="5.14282" y="11.1428" width="1.71429" height="10.2857" rx="0.857143" transform="rotate(-90 5.14282 11.1428)" fill="white"/>
+                    </svg>
+                    <span class="text-white font-14">Import Wallet</span>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="modal" tabindex="-1" role="dialog" id="distribute_wallet">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content modal-bg">
+              <div class="modal-header text-center">
+                <h5 class="text-white font-14">Distribute</h5>
+                <div class="">
+                  <div class="" data-dismiss="modal">
+                      <img src="../assets/img/close.png" alt="" class="home1">
+                  </div>
+                </div>
+
+              </div>
+              <div class="modal-body">
+                  <div class="row">
+                      <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                      <select class="h-50 d-inline-block form-select" id="select_network_distribute" aria-label="Network">
+                          <option selected>Select Network</option>
+                          <option value="ethereum">Ethereum</option>
+                          <option value="polygon">Polygon</option>
+                      </select>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                          <select class="h-50 d-inline-block form-select wallets-list" id="distribute_from_wallet" aria-label="from wallet">
+                            <option value="">send from wallet</option>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                          <select class="h-50 d-inline-block form-select wallets-list" id="distribute_to_wallet"  aria-label="to wallet" multiple>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                          <input type="number" id="distribute_amount" name="amount"  class="form-text"  placeholder="Enter amount to distribute">
+                      </div>
+                  </div>
+              </div>
+              <div class="modal-footer ">
+                  <div class="d-flex align-items-center gap-8 button-cursor wallet-transfer" id="distribute_wallet_button">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path opacity="0.4" d="M22 12.0048C22 17.5137 17.5116 22 12 22C6.48842 22 2 17.5137 2 12.0048C2 6.48625 6.48842 2 12 2C17.5116 2 22 6.48625 22 12.0048" fill="#4FFFA3"/>
+                          <path opacity="0.4" d="M10.4177 12.4959L8.87636 12.6323C8.53045 12.6323 8.25 12.3491 8.25 11.9998C8.25 11.6505 8.53045 11.3673 8.87636 11.3673L10.4177 11.5037C10.6891 11.5037 10.9091 11.7258 10.9091 11.9998C10.9091 12.2743 10.6891 12.4959 10.4177 12.4959Z" fill="#4FFFA3"/>
+                          <path d="M15.5937 12.4709C15.5696 12.4952 15.4796 12.598 15.3951 12.6834C14.9019 13.2181 13.6142 14.0924 12.9405 14.36C12.8383 14.4027 12.5796 14.4936 12.441 14.5C12.3087 14.5 12.1824 14.4692 12.0619 14.4087C11.9115 14.3238 11.7915 14.1897 11.7251 14.0319C11.6828 13.9226 11.6165 13.5945 11.6165 13.5885C11.5506 13.23 11.5146 12.6471 11.5146 12.0028C11.5146 11.3896 11.5506 10.8305 11.6046 10.4661C11.6106 10.4597 11.6769 10.0526 11.7492 9.91307C11.8815 9.65789 12.1401 9.5 12.4169 9.5H12.441C12.6215 9.50597 13.0005 9.66431 13.0005 9.66982C13.6383 9.9374 14.8955 10.7695 15.401 11.3226C15.401 11.3226 15.5437 11.4648 15.6055 11.5534C15.7019 11.681 15.7501 11.8389 15.7501 11.9968C15.7501 12.173 15.696 12.3369 15.5937 12.4709Z" fill="#4FFFA3"/>
+                      </svg>
+
+                      <span class="text-white font-14">Distribute</span>
+                  </div>
+
+              </div>
+            </div>
+          </div>
+    </div>
+    <div class="modal" tabindex="-1" role="dialog" id="create_group_wallet">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content modal-bg">
+              <div class="modal-header text-center">
+                <h5 class="text-white font-14">Create Wallets Group</h5>
+                <div class="">
+                  <div class="" data-dismiss="modal">
+                      <img src="../assets/img/close.png" alt="" class="home1">
+                  </div>
+                </div>
+
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                        <select class="h-50 d-inline-block form-select" id="wallet-select_network_group" aria-label="Network">
+                            <option selected>Select Network</option>
+                            <option value="ethereum">Ethereum</option>
+                            <option value="polygon">Polygon</option>
+                        </select>
+                    </div>
+                </div>
+                  <div class="row">
+                      <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                          <input type="text" class="form-text"  id="wallet_group_name"  placeholder="Enter Group Name">
+                      </div>
+                  </div>
+              </div>
+              <div class="modal-footer ">
+                  <div class="d-flex justify-content-center create-wallet" id="create-group-wallet">
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path opacity="0.4" d="M20 10.0048C20 15.5137 15.5116 20 10 20C4.48842 20 0 15.5137 0 10.0048C0 4.48625 4.48842 0 10 0C15.5116 0 20 4.48625 20 10.0048Z" fill="white"/>
+                          <rect x="9.42859" y="5.14288" width="1.71429" height="10.2857" rx="0.857143" fill="white"/>
+                          <rect x="5.14282" y="11.1428" width="1.71429" height="10.2857" rx="0.857143" transform="rotate(-90 5.14282 11.1428)" fill="white"/>
+                      </svg>
+                      <span class="text-white font-14">Create Group</span>
+                  </div>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>
+<input type="file" id="import" style="display:none"/>

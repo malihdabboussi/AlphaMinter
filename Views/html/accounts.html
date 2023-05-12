@@ -1,0 +1,165 @@
+<div class="d-flex  gap-3 body" style="padding:16px 3px;">
+    <div class="flex-column col-md-2" style="border-right: 1px solid rgba(0, 153, 102 , 0.2);">
+        <div class="d-flex align-items-center gap-8 wallet-transfer" id="account-group" data-toggle="modal" data-target="#create_group_account">
+            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 448 448">
+                <path d="M432.3,38.02c0-12.32-9.99-22.32-22.32-22.32H97.53c-12.32,0-22.32,9.99-22.32,22.32v22.32H350.47c20.53,.03,37.17,16.66,37.2,37.2V372.78h22.32c12.32,0,22.32-9.99,22.32-22.32V38.02Z" fill="#4fffa3"/>
+                <path d="M372.78,97.53c0-12.32-9.99-22.32-22.32-22.32H38.02c-12.32,0-22.32,9.99-22.32,22.32V409.98c0,12.32,9.99,22.32,22.32,22.32H350.47c12.32,0,22.32-9.99,22.32-22.32V97.53Zm-64,166.63h-104.13v104.13c0,5.75-4.66,10.41-10.41,10.41s-10.41-4.66-10.41-10.41v-104.13H79.71c-5.75,0-10.41-4.66-10.41-10.41s4.66-10.41,10.41-10.41h104.13v-104.13c0-5.75,4.66-10.41,10.41-10.41s10.41,4.66,10.41,10.41v104.13h104.13c5.75,0,10.41,4.66,10.41,10.41s-4.66,10.41-10.41,10.41Z" fill="#4fffa3"/>
+            </svg>
+            <span class="font-12">Create Group</span>
+        </div>
+        <input type="hidden" value="" id="selected_account_group" />
+        <div class="d-flex flex-column group-list" id="account_groups" style="overflow-y: auto; height: 850px;">
+            <div class="align-items-center justify-content-between selected button-cursor wallet-transfer group active" style="margin-top:10px">
+                <span class="text-gray font-11">All groups</span>
+            </div>
+        </div>
+    </div>
+      <!-- Tab panes -->
+
+    <div class="tab-content flex-column col-md-10 gap-3 align-items-center tab-pane w-100 active">
+        <div class="d-flex align-items-center justify-content-between wallet-header" style="padding:10px">
+            <span class="text-white font-14" id="group_minter_name">Accounts</span>
+        </div>
+        <div class="d-grid align-items-center content-account-header w-100">
+                <span class="text-gray font-11">Name</span>
+                <span class="text-gray font-11">discord</span>
+                <span class="text-gray font-11">private key</span>
+                <span class="text-gray font-11">twitter</span>
+                <span class="text-gray font-11">email</span>
+                <span class="text-gray font-11">proxy</span>
+                <span class="text-gray font-11" id="action">Action</span>
+
+        </div>
+        <div id="account_content" style="overflow-y: auto; height: 690px;">
+
+        </div>
+        <div class="d-flex align-items-center justify-content-between opensea-content-bottom-header">
+                <div class="d-flex align-items-center gap-14">
+                    <div class="d-flex align-items-center button-cursor create_wallet" id="open_create_account">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path opacity="0.4" d="M20 10.0048C20 15.5137 15.5116 20 10 20C4.48842 20 0 15.5137 0 10.0048C0 4.48625 4.48842 0 10 0C15.5116 0 20 4.48625 20 10.0048Z" fill="white"/>
+                            <rect x="9.42859" y="5.14288" width="1.71429" height="10.2857" rx="0.857143" fill="white"/>
+                            <rect x="5.14282" y="11.1428" width="1.71429" height="10.2857" rx="0.857143" transform="rotate(-90 5.14282 11.1428)" fill="white"/>
+                        </svg>
+                        <span class="text-white font-12" style="padding-left: 3px;"> Create Accounts</span>
+                    </div>
+                    <div class="borders"></div>
+                </div>
+                <div class="d-flex align-items-center gap-8">
+                    
+                    <div class="d-flex align-items-center gap-8 button-cursor wallet-transfer" id="delete_all_account">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            width="15px" height="15px" viewBox="0 0 15 15" style="enable-background:new 0 0 15 15;" xml:space="preserve">
+                            <style type="text/css">
+                                .st0{fill:#663333;stroke:#CC6666;stroke-width:0.5;stroke-miterlimit:10;}
+                                .st1{fill:#CC6666;}
+                            </style>
+                            <circle class="st0" cx="7.5" cy="7.5" r="7.1"/>
+                            <g>
+                                <path class="st1" d="M6.4,4.8c0-0.2,0.2-0.3,0.4-0.3h1.5c0.2,0,0.4,0.1,0.4,0.3v0.4h0.3V4.8c0-0.3-0.3-0.6-0.6-0.6H6.8
+                                    c-0.3,0-0.6,0.3-0.6,0.6v0.4h0.3V4.8z"/>
+                                <path class="st1" d="M5.9,10.9h3.1c0.3,0,0.5-0.3,0.5-0.6V6.2H5.4v4.1C5.4,10.6,5.6,10.9,5.9,10.9z"/>
+                                <path class="st1" d="M5.3,6h4.5c0.2,0,0.3-0.1,0.3-0.3S9.9,5.3,9.7,5.3H5.3c-0.2,0-0.3,0.1-0.3,0.3S5.1,6,5.3,6z"/>
+                            </g>
+                        </svg>
+                        <span class="font-12">Delete</span>
+                    </div>
+
+                </div> 
+
+        </div>
+    </div>
+    <div class="modal" tabindex="-1" role="dialog" id="create_account">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content modal-bg">
+            <div class="modal-header text-center">
+              <h5 class="text-white font-14">Create Account</h5>
+              <div class="">
+                <div class="" data-bs-dismiss="modal" data-dismiss="modal">
+                    <img src="../assets/img/close.png" alt="" class="home1">
+                </div>
+              </div>
+              
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                        <input type="text" class="form-text" placeholder="Account name" id="account_name"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                        <input type="text" class="form-text" placeholder="Discord token" id="account_discord"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                        <input type="text" class="form-text" placeholder="twitter" id="account_twitter"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                        <input type="text" class="form-text" placeholder="private key" id="account_private_key"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                        <input type="text" class="form-text" placeholder="Email" id="account_email"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                        <input type="text" class="form-text" placeholder="Proxy" id="account_proxy"/>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="modal-footer">
+                <input id="account_id" type="hidden"/>
+                <div class="justify-content-center create-wallet" id="create-account" >
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path opacity="0.4" d="M20 10.0048C20 15.5137 15.5116 20 10 20C4.48842 20 0 15.5137 0 10.0048C0 4.48625 4.48842 0 10 0C15.5116 0 20 4.48625 20 10.0048Z" fill="white"/>
+                        <rect x="9.42859" y="5.14288" width="1.71429" height="10.2857" rx="0.857143" fill="white"/>
+                        <rect x="5.14282" y="11.1428" width="1.71429" height="10.2857" rx="0.857143" transform="rotate(-90 5.14282 11.1428)" fill="white"/>
+                    </svg>
+                    <span class="text-white">Save</span>
+                </div>
+    
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="modal" tabindex="-1" role="dialog" id="create_group_account">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content modal-bg">
+              <div class="modal-header text-center">
+                <h5 class="text-white font-14">Create Group</h5>
+                <div class="">
+                  <div class="" data-dismiss="modal">
+                      <img src="../assets/img/close.png" alt="" class="home1">
+                  </div>
+                </div>
+      
+              </div>
+              <div class="modal-body">
+                  <div class="row">
+                      <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                          <input type="text" class="form-text"  id="group_name"  placeholder="Enter Group Name">
+                      </div>
+                  </div>
+              </div>
+              <div class="modal-footer ">
+                  <div class="d-flex justify-content-center create-wallet" id="create-group-account">
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path opacity="0.4" d="M20 10.0048C20 15.5137 15.5116 20 10 20C4.48842 20 0 15.5137 0 10.0048C0 4.48625 4.48842 0 10 0C15.5116 0 20 4.48625 20 10.0048Z" fill="white"/>
+                          <rect x="9.42859" y="5.14288" width="1.71429" height="10.2857" rx="0.857143" fill="white"/>
+                          <rect x="5.14282" y="11.1428" width="1.71429" height="10.2857" rx="0.857143" transform="rotate(-90 5.14282 11.1428)" fill="white"/>
+                      </svg>
+                      <span class="text-white">Create Group</span>
+                  </div>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>
+

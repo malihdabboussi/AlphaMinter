@@ -1,0 +1,285 @@
+<div class="d-flex  gap-3 body" style="padding:16px 3px;">
+    <div class="flex-column col-md-2" style="border-right: 1px solid rgba(0, 153, 102 , 0.2);">
+        <div class="d-flex align-items-center gap-8 wallet-transfer" id="minter-group" data-toggle="modal" data-target="#create_group_minter">
+            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 448 448">
+                <path d="M432.3,38.02c0-12.32-9.99-22.32-22.32-22.32H97.53c-12.32,0-22.32,9.99-22.32,22.32v22.32H350.47c20.53,.03,37.17,16.66,37.2,37.2V372.78h22.32c12.32,0,22.32-9.99,22.32-22.32V38.02Z" fill="#4fffa3"/>
+                <path d="M372.78,97.53c0-12.32-9.99-22.32-22.32-22.32H38.02c-12.32,0-22.32,9.99-22.32,22.32V409.98c0,12.32,9.99,22.32,22.32,22.32H350.47c12.32,0,22.32-9.99,22.32-22.32V97.53Zm-64,166.63h-104.13v104.13c0,5.75-4.66,10.41-10.41,10.41s-10.41-4.66-10.41-10.41v-104.13H79.71c-5.75,0-10.41-4.66-10.41-10.41s4.66-10.41,10.41-10.41h104.13v-104.13c0-5.75,4.66-10.41,10.41-10.41s10.41,4.66,10.41,10.41v104.13h104.13c5.75,0,10.41,4.66,10.41,10.41s-4.66,10.41-10.41,10.41Z" fill="#4fffa3"/>
+            </svg>
+            <span class="font-12">Create Group</span>
+        </div>
+        <input type="hidden" value="" id="selected_minter_group" />
+        <div class="d-flex flex-column group-list" id="minters_groups" style="overflow-y: auto; height: 850px;">
+            <div class="align-items-center justify-content-between selected button-cursor wallet-transfer group active" style="margin-top:10px">
+                <span class="text-gray font-11">All groups</span>
+            </div>
+        </div>
+    </div>
+      <!-- Tab panes -->
+
+    <div class="tab-content flex-column col-md-10 gap-3 align-items-center tab-pane w-100 active">
+        <div class="d-flex align-items-center justify-content-between wallet-header" style="padding:10px">
+            <span class="text-white font-14" id="group_minter_name">Eth Minters</span>
+           </div>
+            <div class="d-grid align-items-center content-mint-header w-100">
+                <span class="text-gray font-11">Address</span>
+                <span class="text-gray font-11">Wallet</span>
+                <span class="text-gray font-11" style="margin-right:15px">Price</span>
+                <span class="text-gray font-11" style="margin-right:5px">Gas fee</span>
+                <span class="text-gray font-11">Gas tip</span>
+                <span class="text-gray font-11" style="margin-left: 5px;">Rpc</span>
+                <span class="text-gray font-11" style="margin-left: 10px;">flip</span>
+                <span class="text-gray font-11" style="margin-left: 10px;">Status</span>
+                <span class="text-gray font-11" id="action" style="margin-left: 25px;">Action</span>
+
+            </div>
+            <div id="minter_content" style="overflow-y: auto; height: 690px;">
+
+            </div>
+            <div class="d-flex align-items-center justify-content-between opensea-content-bottom-header">
+                <div class="d-flex align-items-center gap-14">
+                    <div class="d-flex align-items-center button-cursor create_wallet" id="open_createminter">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path opacity="0.4" d="M20 10.0048C20 15.5137 15.5116 20 10 20C4.48842 20 0 15.5137 0 10.0048C0 4.48625 4.48842 0 10 0C15.5116 0 20 4.48625 20 10.0048Z" fill="white"/>
+                            <rect x="9.42859" y="5.14288" width="1.71429" height="10.2857" rx="0.857143" fill="white"/>
+                            <rect x="5.14282" y="11.1428" width="1.71429" height="10.2857" rx="0.857143" transform="rotate(-90 5.14282 11.1428)" fill="white"/>
+                        </svg>
+                        <span class="text-white font-12" style="padding-left: 3px;"> Create Minters</span>
+                    </div>
+                    <div class="borders"></div>
+                </div>
+                <div class="d-flex align-items-center gap-8">
+                    <div class="d-flex align-items-center gap-8 button-cursor wallet-balance" id="start_all_minters">
+                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
+                            <circle cx="7.5" cy="7.5" r="7.5" fill="#4fffa3" opacity=".5"/>
+                            <path d="M4.84,2.81l6.67,3.96c.5,.29,.5,1.13,0,1.43l-6.67,3.98c-.45,.27-.97-.12-.97-.71V3.53c0-.6,.52-.98,.97-.71h0Z" fill="#4fffa3"/>
+                          </svg>
+                        <span class="font-12">Start All</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-8 button-cursor wallet-balance" id="stop_all_minters">
+                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
+                            <circle cx="7.5" cy="7.5" r="7.5" fill="#ffa300" opacity=".5"/>
+                            <g>
+                              <rect x="9" y="2.51" width="1.93" height="9.97" rx=".39" ry=".39" fill="#ffa300"/>
+                              <rect x="4.07" y="2.51" width="1.93" height="9.97" rx=".39" ry=".39" fill="#ffa300"/>
+                            </g>
+                          </svg>
+                        <span class="font-12">stop All</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-8 button-cursor wallet-transfer" id="delete_all_minters">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            width="15px" height="15px" viewBox="0 0 15 15" style="enable-background:new 0 0 15 15;" xml:space="preserve">
+                            <style type="text/css">
+                                .st0{fill:#663333;stroke:#CC6666;stroke-width:0.5;stroke-miterlimit:10;}
+                                .st1{fill:#CC6666;}
+                            </style>
+                            <circle class="st0" cx="7.5" cy="7.5" r="7.1"/>
+                            <g>
+                                <path class="st1" d="M6.4,4.8c0-0.2,0.2-0.3,0.4-0.3h1.5c0.2,0,0.4,0.1,0.4,0.3v0.4h0.3V4.8c0-0.3-0.3-0.6-0.6-0.6H6.8
+                                    c-0.3,0-0.6,0.3-0.6,0.6v0.4h0.3V4.8z"/>
+                                <path class="st1" d="M5.9,10.9h3.1c0.3,0,0.5-0.3,0.5-0.6V6.2H5.4v4.1C5.4,10.6,5.6,10.9,5.9,10.9z"/>
+                                <path class="st1" d="M5.3,6h4.5c0.2,0,0.3-0.1,0.3-0.3S9.9,5.3,9.7,5.3H5.3c-0.2,0-0.3,0.1-0.3,0.3S5.1,6,5.3,6z"/>
+                            </g>
+                        </svg>
+                        <span class="font-12">Delete</span>
+                    </div>
+
+                </div>
+            </div>
+    </div>
+    <div class="modal" tabindex="-1" role="dialog" id="create_minter">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content modal-bg">
+            <div class="modal-header text-center">
+              <h5 class="text-white font-14">Create Minter</h5>
+              <div class="">
+                <div class="" data-bs-dismiss="modal" data-dismiss="modal">
+                    <img src="../assets/img/close.png" alt="" class="home1">
+                </div>
+              </div>
+
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                        <input type="text" class="form-text" placeholder="Address" id="minter_address"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                        <input type="text" class="form-text" placeholder="function" id="minter_function"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                        <input type="text" class="form-text" placeholder="function params" id="minter_functionparams"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                        <input type="text" class="form-text" placeholder="price" id="minter_price"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-group mb-3" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text" style="background-color: rgba(71, 84, 80,0.2 );border-color:rgba(71, 84, 80,0.2 );min-height:30px">
+                            <input type="checkbox" id="flip" aria-label="Checkbox for following text input">
+                          </div>
+                        </div>
+                        <input type="text" disabled style="color: white;font-size: 12px;;width:72%;border-radius: 5px;background-color: rgba(71, 84, 80,0.2 );border-color:rgba(71, 84, 80,0.2 );height:30px;"
+                         id="flip_function" placeholder="Flip function">
+                      </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                        <select class="h-50 d-inline-block  form-select" id="minter_wallets" aria-label="wallets" multiple>
+
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                        <input type="text" class="form-text" placeholder="RPC node" id="rpc_node"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                        <input type="text" class="form-text" placeholder="extra gas fees to speed up transaction" id="gas_fees"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                        <input type="text" class="form-text" placeholder="gas cost" id="gas_cost"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                        <input type="time" class="form-text" placeholder="scheduler" id="timer"/>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <div class="justify-content-center create-wallet hide" id="create-minter" >
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path opacity="0.4" d="M20 10.0048C20 15.5137 15.5116 20 10 20C4.48842 20 0 15.5137 0 10.0048C0 4.48625 4.48842 0 10 0C15.5116 0 20 4.48625 20 10.0048Z" fill="white"/>
+                        <rect x="9.42859" y="5.14288" width="1.71429" height="10.2857" rx="0.857143" fill="white"/>
+                        <rect x="5.14282" y="11.1428" width="1.71429" height="10.2857" rx="0.857143" transform="rotate(-90 5.14282 11.1428)" fill="white"/>
+                    </svg>
+                    <span class="text-white">Create</span>
+                </div>
+                <div class="justify-content-center create-wallet hide" id="edit-minter" data-id="" >
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path opacity="0.4" d="M20 10.0048C20 15.5137 15.5116 20 10 20C4.48842 20 0 15.5137 0 10.0048C0 4.48625 4.48842 0 10 0C15.5116 0 20 4.48625 20 10.0048Z" fill="white"/>
+                        <rect x="9.42859" y="5.14288" width="1.71429" height="10.2857" rx="0.857143" fill="white"/>
+                        <rect x="5.14282" y="11.1428" width="1.71429" height="10.2857" rx="0.857143" transform="rotate(-90 5.14282 11.1428)" fill="white"/>
+                    </svg>
+                    <span class="text-white">Edit</span>
+                </div>
+
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="modal" tabindex="-1" role="dialog" id="create_group_minter">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content modal-bg">
+              <div class="modal-header text-center">
+                <h5 class="text-white font-14">Create Group</h5>
+                <div class="">
+                  <div class="" data-dismiss="modal">
+                      <img src="../assets/img/close.png" alt="" class="home1">
+                  </div>
+                </div>
+
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                        <select class="h-50 d-inline-block form-select" id="minter-select_network_group" aria-label="Network">
+                            <option selected>Select Network</option>
+                            <option value="ethereum">Ethereum</option>
+                            <option value="polygon">Polygon</option>
+                        </select>
+                    </div>
+                </div>
+                  <div class="row">
+                      <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                          <input type="text" class="form-text"  id="group_name"  placeholder="Enter Group Name">
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                          <input type="text" class="form-text"  id="Group_RPC"  placeholder="Enter Group RPC node">
+                      </div>
+                  </div>
+              </div>
+              <div class="modal-footer ">
+                  <div class="d-flex justify-content-center create-wallet" id="create-group-mint">
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path opacity="0.4" d="M20 10.0048C20 15.5137 15.5116 20 10 20C4.48842 20 0 15.5137 0 10.0048C0 4.48625 4.48842 0 10 0C15.5116 0 20 4.48625 20 10.0048Z" fill="white"/>
+                          <rect x="9.42859" y="5.14288" width="1.71429" height="10.2857" rx="0.857143" fill="white"/>
+                          <rect x="5.14282" y="11.1428" width="1.71429" height="10.2857" rx="0.857143" transform="rotate(-90 5.14282 11.1428)" fill="white"/>
+                      </svg>
+                      <span class="text-white">Create Group</span>
+                  </div>
+              </div>
+            </div>
+          </div>
+    </div>
+    <div class="modal" tabindex="-1" role="dialog" id="edit_group_minter">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content modal-bg">
+              <div class="modal-header text-center">
+                <h5 class="text-white font-14">Mass edit Minter Group</h5>
+                <div class="">
+                  <div class="" data-bs-dismiss="modal" data-dismiss="modal">
+                      <img src="../assets/img/close.png" alt="" class="home1">
+                  </div>
+                </div>
+
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                        <input type="text" class="form-text" placeholder="function" id="minter_group_function"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                        <input type="text" class="form-text" placeholder="function params" id="minter_group_functionparams"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                        <input type="text" class="form-text" placeholder="price" id="minter_group_price"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                        <input type="text" class="form-text" placeholder="custom gas fees to speed up transaction" id="minter_group_gas_fees"/>
+                    </div>
+                </div>
+                <div class="row">
+                      <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                        <input type="text" class="form-text" placeholder="gas cost" id="mintergroup_gas_cost"/>
+                      </div>
+                </div>
+
+              </div>
+              <div class="modal-footer">
+                  <div class="justify-content-center create-wallet" id="save_edit_group" data-id="">
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path opacity="0.4" d="M20 10.0048C20 15.5137 15.5116 20 10 20C4.48842 20 0 15.5137 0 10.0048C0 4.48625 4.48842 0 10 0C15.5116 0 20 4.48625 20 10.0048Z" fill="white"/>
+                          <rect x="9.42859" y="5.14288" width="1.71429" height="10.2857" rx="0.857143" fill="white"/>
+                          <rect x="5.14282" y="11.1428" width="1.71429" height="10.2857" rx="0.857143" transform="rotate(-90 5.14282 11.1428)" fill="white"/>
+                      </svg>
+                      <span class="text-white">Edit</span>
+                  </div>
+
+              </div>
+            </div>
+          </div>
+    </div>
+</div>
+

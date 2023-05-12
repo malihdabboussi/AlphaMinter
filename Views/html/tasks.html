@@ -1,0 +1,393 @@
+<div class="d-flex flex-column gap-3 body">
+    <div class="d-flex align-items-center justify-content-between wallet-header">
+     <span class="text-white font-14">Tasks</span>
+     <div class="d-flex align-items-center gap-2">
+         <span class="connect-status bg-success"></span>
+         <span class="connect-text font-11 text-gray">Connected</span>
+     </div>
+    </div>
+    <div class="d-flex flex-column gap-3 opensea-content-body">
+
+        <div class="d-flex flex-column align-items-center justify-content-between opensea-content-body__content">
+            <div class="d-flex align-items-center selectModule gap-3 w-100">
+                <span class="text-gray font-11">Select Module</span>
+                <ul class="nav nav-pills" role="tablist">
+                    <li class="nav-item">
+                      <a class="nav-link active" data-toggle="pill" href="#Sniper">Sniper</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="pill" href="#Lister">Lister</a>
+                    </li>
+                    <!--<li class="nav-item">
+                      <a class="nav-link" data-toggle="pill" href="#Bidder">Bidder</a>
+                    </li>-->
+                  </ul>
+            </div>
+        </div>
+
+    </div>
+
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div id="Sniper" class="flex-column gap-3 align-items-center tab-pane w-100 active">
+            <div class="d-grid align-items-center content-header w-100">
+                <span class="text-gray font-11">Collection</span>
+                <span class="text-gray font-11">MarketPlace</span>
+                <span class="text-gray font-11">Wallet</span>
+                <span class="text-gray font-11">Price</span>
+                <span class="text-gray font-11">Status</span>
+                <span class="text-gray font-11" id="action">Action</span>
+
+            </div>
+            <div id="sniper_content">
+
+            </div>
+            <div class="d-flex align-items-center justify-content-between opensea-content-bottom-header">
+                <div class="d-flex align-items-center gap-14">
+                    <div class="d-flex align-items-center button-cursor  create_wallet"  id="createsniper" >
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path opacity="0.4" d="M20 10.0048C20 15.5137 15.5116 20 10 20C4.48842 20 0 15.5137 0 10.0048C0 4.48625 4.48842 0 10 0C15.5116 0 20 4.48625 20 10.0048Z" fill="white"/>
+                            <rect x="9.42859" y="5.14288" width="1.71429" height="10.2857" rx="0.857143" fill="white"/>
+                            <rect x="5.14282" y="11.1428" width="1.71429" height="10.2857" rx="0.857143" transform="rotate(-90 5.14282 11.1428)" fill="white"/>
+                        </svg>
+                        <span class="text-white font-12" style="padding-left: 3px;"> Create Sniper</span>
+                    </div>
+                    <div class="borders"></div>
+                    <!--<div class="d-flex align-items-center" id="search-wallet">
+                        <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.72003 0.960022C2.71253 0.960022 0.280029 3.39252 0.280029 6.40002C0.280029 9.40752 2.71253 11.84 5.72003 11.84C6.79378 11.84 7.78753 11.525 8.63003 10.99L12.56 14.92L13.92 13.56L10.04 9.69002C10.7375 8.77502 11.16 7.64127 11.16 6.40002C11.16 3.39252 8.72753 0.960022 5.72003 0.960022ZM5.72003 2.24002C8.02378 2.24002 9.88003 4.09627 9.88003 6.40002C9.88003 8.70377 8.02378 10.56 5.72003 10.56C3.41628 10.56 1.56003 8.70377 1.56003 6.40002C1.56003 4.09627 3.41628 2.24002 5.72003 2.24002Z" fill="#959595"/>
+                        </svg>
+                        <input type="text" placeholder="Search Wallet" id="search-input" class="text-gray font-11"/>
+
+                    </div>-->
+                </div>
+                <div class="d-flex align-items-center gap-8">
+
+                   <!-- <div class="d-flex align-items-center gap-8 wallet-transfer" id="delete_all_snipers">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            width="15px" height="15px" viewBox="0 0 15 15" style="enable-background:new 0 0 15 15;" xml:space="preserve">
+                        <style type="text/css">
+                            .st0{fill:#663333;stroke:#CC6666;stroke-width:0.5;stroke-miterlimit:10;}
+                            .st1{fill:#CC6666;}
+                        </style>
+                        <circle class="st0" cx="7.5" cy="7.5" r="7.1"/>
+                        <g>
+                            <path class="st1" d="M6.4,4.8c0-0.2,0.2-0.3,0.4-0.3h1.5c0.2,0,0.4,0.1,0.4,0.3v0.4h0.3V4.8c0-0.3-0.3-0.6-0.6-0.6H6.8
+                                c-0.3,0-0.6,0.3-0.6,0.6v0.4h0.3V4.8z"/>
+                            <path class="st1" d="M5.9,10.9h3.1c0.3,0,0.5-0.3,0.5-0.6V6.2H5.4v4.1C5.4,10.6,5.6,10.9,5.9,10.9z"/>
+                            <path class="st1" d="M5.3,6h4.5c0.2,0,0.3-0.1,0.3-0.3S9.9,5.3,9.7,5.3H5.3c-0.2,0-0.3,0.1-0.3,0.3S5.1,6,5.3,6z"/>
+                        </g>
+                        </svg>
+                        <span class="font-12">Delete</span>
+
+                    </div>-->
+
+                </div>
+            </div>
+        </div>
+        <div id="Lister" class="flex-column gap-3 align-items-center w-100 tab-pane fade">
+            <div class="d-grid align-items-center content-header w-100">
+                <span class="text-gray font-11">Collection</span>
+                <span class="text-gray font-11">MarketPlace</span>
+                <span class="text-gray font-11">Price</span>
+                <span class="text-gray font-11">End Time</span>
+                <span class="text-gray font-11">Status</span>
+                <span class="text-gray font-11" id="action">Action</span>
+
+            </div>
+            <div id="lister_content"></div>
+            <div class="d-flex align-items-center justify-content-between opensea-content-bottom-header">
+                <div class="d-flex align-items-center gap-14">
+                    <div class="d-flex align-items-center  button-cursor create_wallet" data-toggle="modal" data-target="#list_nft">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path opacity="0.4" d="M20 10.0048C20 15.5137 15.5116 20 10 20C4.48842 20 0 15.5137 0 10.0048C0 4.48625 4.48842 0 10 0C15.5116 0 20 4.48625 20 10.0048Z" fill="white"/>
+                            <rect x="9.42859" y="5.14288" width="1.71429" height="10.2857" rx="0.857143" fill="white"/>
+                            <rect x="5.14282" y="11.1428" width="1.71429" height="10.2857" rx="0.857143" transform="rotate(-90 5.14282 11.1428)" fill="white"/>
+                        </svg>
+                        <span class="text-white font-12" style="padding-left: 3px;"> List Nft</span>
+                    </div>
+                    <div class="borders"></div>
+                </div>
+            </div>
+        </div>
+        <div id="Bidder" class="flex-column gap-3 align-items-center w-100 tab-pane fade">
+            <div class="d-grid align-items-center content-header w-100">
+                <span class="text-gray font-11">Collection</span>
+                <span class="text-gray font-11">MarketPlace</span>
+                <span class="text-gray font-11">Price</span>
+                <span class="text-gray font-11">End Time</span>
+                <span class="text-gray font-11">Status</span>
+                <span class="text-gray font-11" id="action">Action</span>
+
+            </div>
+            <div id="bidder_content"></div>
+            <div class="d-flex align-items-center justify-content-between opensea-content-bottom-header">
+                <div class="d-flex align-items-center gap-14">
+                    <div class="d-flex align-items-center button-cursor create_wallet" data-toggle="modal" data-target="#bid_nft">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path opacity="0.4" d="M20 10.0048C20 15.5137 15.5116 20 10 20C4.48842 20 0 15.5137 0 10.0048C0 4.48625 4.48842 0 10 0C15.5116 0 20 4.48625 20 10.0048Z" fill="white"/>
+                            <rect x="9.42859" y="5.14288" width="1.71429" height="10.2857" rx="0.857143" fill="white"/>
+                            <rect x="5.14282" y="11.1428" width="1.71429" height="10.2857" rx="0.857143" transform="rotate(-90 5.14282 11.1428)" fill="white"/>
+                        </svg>
+                        <span class="text-white font-12" style="padding-left: 3px;"> Bid Nft</span>
+                    </div>
+                    <div class="borders"></div>
+                    <div class="d-flex align-items-center gap-8">
+
+                        <!--<div class="d-flex align-items-center gap-8 wallet-transfer" id="delete_all_listers">
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                width="15px" height="15px" viewBox="0 0 15 15" style="enable-background:new 0 0 15 15;" xml:space="preserve">
+                            <style type="text/css">
+                                .st0{fill:#663333;stroke:#CC6666;stroke-width:0.5;stroke-miterlimit:10;}
+                                .st1{fill:#CC6666;}
+                            </style>
+                            <circle class="st0" cx="7.5" cy="7.5" r="7.1"/>
+                            <g>
+                                <path class="st1" d="M6.4,4.8c0-0.2,0.2-0.3,0.4-0.3h1.5c0.2,0,0.4,0.1,0.4,0.3v0.4h0.3V4.8c0-0.3-0.3-0.6-0.6-0.6H6.8
+                                    c-0.3,0-0.6,0.3-0.6,0.6v0.4h0.3V4.8z"/>
+                                <path class="st1" d="M5.9,10.9h3.1c0.3,0,0.5-0.3,0.5-0.6V6.2H5.4v4.1C5.4,10.6,5.6,10.9,5.9,10.9z"/>
+                                <path class="st1" d="M5.3,6h4.5c0.2,0,0.3-0.1,0.3-0.3S9.9,5.3,9.7,5.3H5.3c-0.2,0-0.3,0.1-0.3,0.3S5.1,6,5.3,6z"/>
+                            </g>
+                            </svg>
+                            <span class="font-12">Delete</span>
+
+                        </div>-->
+
+                    </div>
+                </div>
+        </div>
+      </div>
+ </div>
+
+ <div class="modal" tabindex="-1" role="dialog" id="create_sniper">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content modal-bg">
+        <div class="modal-header text-center">
+          <h5 class="text-white font-14">Create Sniper</h5>
+          <div class="">
+            <div class="" data-bs-dismiss="modal">
+                <img src="../assets/img/close.png" alt="" class="home1">
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                <select class="h-50 d-inline-block form-select" id="marketplace" aria-label="Marketplace">
+                    <option selected value="">MarketPlace</option>
+                    <option value="opensea">Opensea</option>
+                </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                <select class="h-50 d-inline-block form-select" id="sniper_nft_proxies" aria-label="Proxies">
+                    <option selected value="">Select Proxies List</option>
+                </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                    <input type="text" class="form-text" placeholder="Collection Address" id="collection_name"/>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                    <select class="h-50 d-inline-block form-select" id="wallets_list"  aria-label="wallets">
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                    <input type="number" class="form-text" id="price" name="price"  placeholder="Enter price">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-8 d-inline-block" style="padding-left:30%;width:60%;margin-bottom:20px;">
+                    <div class=" justify-content-center create-wallet" id="load-traits">
+                        <svg width="15" height="15" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path opacity="0.4" d="M20 10.0048C20 15.5137 15.5116 20 10 20C4.48842 20 0 15.5137 0 10.0048C0 4.48625 4.48842 0 10 0C15.5116 0 20 4.48625 20 10.0048Z" fill="white"/>
+                            <rect x="9.42859" y="5.14288" width="1.71429" height="10.2857" rx="0.857143" fill="white"/>
+                            <rect x="5.14282" y="11.1428" width="1.71429" height="10.2857" rx="0.857143" transform="rotate(-90 5.14282 11.1428)" fill="white"/>
+                        </svg>
+                        <span class="text-white font-11">Load Traits</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="traits_section" class="hide">
+                <div class="col-xs-8 d-inline-block" style="margin-left:10%;width:90%;margin-bottom:20px;">
+                    <select class="h-50 d-inline-block  form-select" id="collection_traits" aria-label="Trait" multiple>
+                    </select>
+                </div>
+                <!--<div class="" style="width:20%;margin-bottom:20px;"  id="load-traits">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path opacity="0.4" d="M22 12.0048C22 17.5137 17.5116 22 12 22C6.48842 22 2 17.5137 2 12.0048C2 6.48625 6.48842 2 12 2C17.5116 2 22 6.48625 22 12.0048Z" fill="#36B77A"/>' +
+                    <path d="M16 12.0049C16 12.2576 15.9205 12.5113 15.7614 12.7145C15.7315 12.7543 15.5923 12.9186 15.483 13.0255L15.4233 13.0838C14.5881 13.9694 12.5099 15.3011 11.456 15.7278C11.456 15.7375 10.8295 15.9913 10.5313 16H10.4915C10.0341 16 9.60653 15.7482 9.38778 15.34C9.26847 15.1154 9.15909 14.4642 9.14915 14.4554C9.05966 13.8712 9 12.9769 9 11.9951C9 10.9657 9.05966 10.0316 9.16903 9.45808C9.16903 9.44836 9.27841 8.92345 9.34801 8.74848C9.45739 8.49672 9.65625 8.2819 9.90483 8.14581C10.1037 8.04957 10.3125 8 10.5313 8C10.7599 8.01069 11.1875 8.15553 11.3565 8.22357C12.4702 8.65128 14.598 10.051 15.4134 10.9064C15.5526 11.0425 15.7017 11.2087 15.7415 11.2467C15.9105 11.4605 16 11.723 16 12.0049Z" fill="#36B77A"/>
+                    </svg>
+                </div>-->
+            </div>
+
+
+        </div>
+        <div class="modal-footer">
+            <div class=" justify-content-center create-wallet button-cursor hide" id="create-sniper">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path opacity="0.4" d="M20 10.0048C20 15.5137 15.5116 20 10 20C4.48842 20 0 15.5137 0 10.0048C0 4.48625 4.48842 0 10 0C15.5116 0 20 4.48625 20 10.0048Z" fill="white"/>
+                    <rect x="9.42859" y="5.14288" width="1.71429" height="10.2857" rx="0.857143" fill="white"/>
+                    <rect x="5.14282" y="11.1428" width="1.71429" height="10.2857" rx="0.857143" transform="rotate(-90 5.14282 11.1428)" fill="white"/>
+                </svg>
+                <span class="text-white font-14">Create</span>
+            </div>
+            <div class=" justify-content-center create-wallet button-cursor hide" id="edit-sniper">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path opacity="0.4" d="M20 10.0048C20 15.5137 15.5116 20 10 20C4.48842 20 0 15.5137 0 10.0048C0 4.48625 4.48842 0 10 0C15.5116 0 20 4.48625 20 10.0048Z" fill="white"/>
+                    <rect x="9.42859" y="5.14288" width="1.71429" height="10.2857" rx="0.857143" fill="white"/>
+                    <rect x="5.14282" y="11.1428" width="1.71429" height="10.2857" rx="0.857143" transform="rotate(-90 5.14282 11.1428)" fill="white"/>
+                </svg>
+                <span class="text-white font-14">Edit</span>
+            </div>
+
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" id="list_nft">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content modal-bg">
+        <div class="modal-header text-center">
+          <h5 class="text-white font-14">List NFT</h5>
+          <div class="">
+            <div class="" data-dismiss="modal">
+                <img src="../assets/img/close.png" alt="" class="home1">
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                <select class="h-50 d-inline-block form-select" id="list_nft_marketplace" aria-label="Network">
+                    <option selected value ="">Select Marketplace</option>
+                    <option value="opensea">opensea</option>
+                    <option value="x2y2">x2y2</option>
+                </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                <select class="h-50 d-inline-block form-select" id="list_nft_proxies" aria-label="Proxies">
+                    <option selected value="">Select Proxies List</option>
+                </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                <select class="h-50 d-inline-block form-select" id="list_nft_time" aria-label="Network">
+                    <option selected value="0">Select Time</option>
+                    <option value="1">1 Day</option>
+                    <option value="2">2 Days</option>
+                    <option value="3">3 Days</option>
+                    <option value="4">4 Days</option>
+                    <option value="5">5 Days</option>
+                    <option value="6">6 Days</option>
+                    <option value="7">7 Days</option>
+                </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                    <select class="h-50 d-inline-block form-select wallets-list" id="wallets_listing" aria-label="wallet" multiple>
+                    </select>
+                </div>
+            </div>
+            <div class="container-fluid " style="overflow: auto;max-height:200px" id="nfts">
+
+            </div>
+        </div>
+        <div class="modal-footer ">
+            <div class="d-flex align-items-center gap-8 button-cursor wallet-transfer" id="list-nfts">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path opacity="0.4" d="M22 12.0048C22 17.5137 17.5116 22 12 22C6.48842 22 2 17.5137 2 12.0048C2 6.48625 6.48842 2 12 2C17.5116 2 22 6.48625 22 12.0048" fill="#4FFFA2"/>
+                    <path opacity="0.4" d="M10.4177 12.4959L8.87636 12.6323C8.53045 12.6323 8.25 12.3491 8.25 11.9998C8.25 11.6505 8.53045 11.3673 8.87636 11.3673L10.4177 11.5037C10.6891 11.5037 10.9091 11.7258 10.9091 11.9998C10.9091 12.2743 10.6891 12.4959 10.4177 12.4959Z" fill="#4FFFA2"/>
+                    <path d="M15.5937 12.4709C15.5696 12.4952 15.4796 12.598 15.3951 12.6834C14.9019 13.2181 13.6142 14.0924 12.9405 14.36C12.8383 14.4027 12.5796 14.4936 12.441 14.5C12.3087 14.5 12.1824 14.4692 12.0619 14.4087C11.9115 14.3238 11.7915 14.1897 11.7251 14.0319C11.6828 13.9226 11.6165 13.5945 11.6165 13.5885C11.5506 13.23 11.5146 12.6471 11.5146 12.0028C11.5146 11.3896 11.5506 10.8305 11.6046 10.4661C11.6106 10.4597 11.6769 10.0526 11.7492 9.91307C11.8815 9.65789 12.1401 9.5 12.4169 9.5H12.441C12.6215 9.50597 13.0005 9.66431 13.0005 9.66982C13.6383 9.9374 14.8955 10.7695 15.401 11.3226C15.401 11.3226 15.5437 11.4648 15.6055 11.5534C15.7019 11.681 15.7501 11.8389 15.7501 11.9968C15.7501 12.173 15.696 12.3369 15.5937 12.4709Z" fill="#4FFFA2"/>
+                </svg>
+
+                <span class="text-white font-14">List</span>
+            </div>
+
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" id="bid_nft">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content modal-bg">
+        <div class="modal-header text-center">
+          <h5 class="text-white font-14">Bid NFT</h5>
+          <div class="">
+            <div class="" data-dismiss="modal">
+                <img src="../assets/img/close.png" alt="" class="home1">
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                <select class="h-50 d-inline-block form-select" id="bid_nft_marketplace" aria-label="marketplace">
+                    <option selected>Select Marketplace</option>
+                    <option value="opensea">opensea</option>
+                </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                <select class="h-50 d-inline-block form-select" id="bid_nft_time" aria-label="time">
+                    <option selected>Select Time</option>
+                    <option value="1">1 Day</option>
+                    <option value="2">2 Days</option>
+                    <option value="3">3 Days</option>
+                    <option value="4">4 Days</option>
+                    <option value="5">5 Days</option>
+                    <option value="6">6 Days</option>
+                    <option value="7">7 Days</option>
+                </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                    <select class="h-50 d-inline-block form-select wallets-list" id="wallets_bidding" aria-label="wallet">
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;margin-bottom:20px;">
+                    <input type="text" id="bid_collection" placeholder="Collection Name" class="form-text" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-8 d-inline-block" style="padding-left:10%;width:100%;">
+                    <input type="number" id="bid_price" placeholder="Bid Price" class="form-text" />
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer ">
+            <div class="d-flex align-items-center gap-8 button-cursor wallet-transfer" id="bid-nfts">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path opacity="0.4" d="M22 12.0048C22 17.5137 17.5116 22 12 22C6.48842 22 2 17.5137 2 12.0048C2 6.48625 6.48842 2 12 2C17.5116 2 22 6.48625 22 12.0048" fill="#7D5FD2"/>
+                    <path opacity="0.4" d="M10.4177 12.4959L8.87636 12.6323C8.53045 12.6323 8.25 12.3491 8.25 11.9998C8.25 11.6505 8.53045 11.3673 8.87636 11.3673L10.4177 11.5037C10.6891 11.5037 10.9091 11.7258 10.9091 11.9998C10.9091 12.2743 10.6891 12.4959 10.4177 12.4959Z" fill="#B297FF"/>
+                    <path d="M15.5937 12.4709C15.5696 12.4952 15.4796 12.598 15.3951 12.6834C14.9019 13.2181 13.6142 14.0924 12.9405 14.36C12.8383 14.4027 12.5796 14.4936 12.441 14.5C12.3087 14.5 12.1824 14.4692 12.0619 14.4087C11.9115 14.3238 11.7915 14.1897 11.7251 14.0319C11.6828 13.9226 11.6165 13.5945 11.6165 13.5885C11.5506 13.23 11.5146 12.6471 11.5146 12.0028C11.5146 11.3896 11.5506 10.8305 11.6046 10.4661C11.6106 10.4597 11.6769 10.0526 11.7492 9.91307C11.8815 9.65789 12.1401 9.5 12.4169 9.5H12.441C12.6215 9.50597 13.0005 9.66431 13.0005 9.66982C13.6383 9.9374 14.8955 10.7695 15.401 11.3226C15.401 11.3226 15.5437 11.4648 15.6055 11.5534C15.7019 11.681 15.7501 11.8389 15.7501 11.9968C15.7501 12.173 15.696 12.3369 15.5937 12.4709Z" fill="#B297FF"/>
+                </svg>
+
+                <span class="font-14">Mass Bid</span>
+            </div>
+
+        </div>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,88 @@
+<div class="container" style="padding-top:50px;width:100%">
+
+    <div class="row" style="width:100%">
+        <div class="col-6 settings-col">
+            <div class="row settings-col-header settings-label" style="padding-top:15px;padding-left:5px;">
+                Error delay
+            </div>
+            <div class="row settings-row-body" >
+                <input  id="errordelay"  class="form-text"  placeholder="Enter error delay" style="width:250px;margin:15px"/>
+                <span class="settings-label button-cursor" id="save_errordelay" style="margin:15px;width:150px;height:36px;background-image: linear-gradient( to right, rgba(0, 143, 115,1) , rgba(70, 207, 147,1) );border-radius: 37px;text-align:center;padding-top:10px">Save</span>
+            </div>
+        </div>
+        <div class="col-6 settings-col">
+            <div class="row settings-col-header settings-label" style="padding-top:15px;padding-left:5px;">
+                Websocket RPC
+            </div>
+            <div class="row settings-row-body" >
+                <input  id="websocket"  class="form-text"  placeholder="Enter Websocket RPC node"style="width:250px;margin:15px"/>
+                <span class="settings-label button-cursor" id="save_websocket" style="margin:15px;width:150px;height:36px;background-image: linear-gradient( to right, rgba(0, 143, 115,1) , rgba(70, 207, 147,1) );border-radius: 37px;text-align:center;padding-top:10px">Save</span>
+            </div>
+        </div>
+    </div>
+
+<div class="row" style="width:100%">
+    <div class="col-6 settings-col">
+        <div class="row settings-col-header settings-label" style="padding-top:15px;padding-left:5px;">
+            Discord Webhook
+        </div>
+        <div class="row settings-row-body">
+            <input  id="webhook"  class="form-text"  placeholder="Enter discord webhook" style="width:250px;margin:15px"/>
+            <span class="settings-label button-cursor" id="save_webhook" style="margin:15px;width:150px;height:36px;background-image: linear-gradient( to right, rgba(0, 143, 115,1) , rgba(70, 207, 147,1) );border-radius: 37px;text-align:center;padding-top:10px">Save</span>
+        </div>
+    </div>
+    <div class="col-6 settings-col">
+        <div class="row settings-col-header settings-label" style="padding-top:15px;padding-left:5px;">
+            Ethereum RPC
+        </div>
+
+        <div class="row settings-row-body" >
+            <input  id="rpc"  class="form-text"  placeholder="Enter RPC node"style="width:250px;margin:15px"/>
+            <span class="settings-label button-cursor" id="save_rpc" style="margin:15px;width:150px;height:36px;background-image: linear-gradient( to right, rgba(0, 143, 115,1) , rgba(70, 207, 147,1) );border-radius: 37px;text-align:center;padding-top:10px">Save</span>
+        </div>
+    </div>
+    <div class="col-6 settings-col">
+        <div class="row settings-col-header settings-label" style="padding-top:15px;padding-left:5px;">
+            Polygon RPC
+        </div>
+        <div class="row settings-row-body" >
+            <input  id="poly_rpc"  class="form-text"  placeholder="Enter RPC node"style="width:250px;margin:15px"/>
+            <span class="settings-label button-cursor" id="save_poly_rpc" style="margin:15px;width:150px;height:36px;background-image: linear-gradient( to right, rgba(0, 143, 115,1) , rgba(70, 207, 147,1) );border-radius: 37px;text-align:center;padding-top:10px">Save</span>
+        </div>
+    </div>
+</div>
+
+<div class="row" style="margin-top:50px;width:100%;height:400px;">
+    <div class="settings-col" style="width:100%;height:100%;min-width: 1030px;">
+        <div class="row settings-col-header settings-label" style="width: 100%; margin-left: 1px;padding-top:15px;padding-left:5px;">
+            Proxies
+         </div>
+         <div class="row settings-row-body" style="margin-left: 10px;">
+            <div class="flex-column col-md-2" id="proxies-lists" style="margin-top: 30px;">
+                <div class="button-cursor wallet-transfer"  id="proxies-group">
+                    <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 448 448">
+                        <path d="M432.3,38.02c0-12.32-9.99-22.32-22.32-22.32H97.53c-12.32,0-22.32,9.99-22.32,22.32v22.32H350.47c20.53,.03,37.17,16.66,37.2,37.2V372.78h22.32c12.32,0,22.32-9.99,22.32-22.32V38.02Z" fill="#4fffa3"/>
+                        <path d="M372.78,97.53c0-12.32-9.99-22.32-22.32-22.32H38.02c-12.32,0-22.32,9.99-22.32,22.32V409.98c0,12.32,9.99,22.32,22.32,22.32H350.47c12.32,0,22.32-9.99,22.32-22.32V97.53Zm-64,166.63h-104.13v104.13c0,5.75-4.66,10.41-10.41,10.41s-10.41-4.66-10.41-10.41v-104.13H79.71c-5.75,0-10.41-4.66-10.41-10.41s4.66-10.41,10.41-10.41h104.13v-104.13c0-5.75,4.66-10.41,10.41-10.41s10.41,4.66,10.41,10.41v104.13h104.13c5.75,0,10.41,4.66,10.41,10.41s-4.66,10.41-10.41,10.41Z" fill="#4fffa3"/>
+                    </svg>
+                    <span class="font-12">Create List</span>
+                </div>
+
+             </div>
+             <div class="flex-column col-md-10" >
+                <textarea  id="proxies" rows="300"   placeholder="Copy Paste proxies" style="color:white;margin-top: 30px ;height:300px;border-radius: 10px;background-color: rgba(71, 84, 80,0.2 );border-color: rgba(71, 84, 80,0.2 )" ></textarea>
+                <div class="row" style="margin-left:510px">
+
+                    <span id="save_proxies" class="settings-label button-cursor" style="margin-bottom:10px;margin-left:150px;width:150px;height:35px;background-image: linear-gradient( to right, rgba(0, 143, 115,1) , rgba(70, 207, 147,1) );border-radius: 37px;text-align:center;padding-top:10px">
+                       Save
+                        <input type="hidden" id="selected_list_group" />
+                        <input type="hidden" id="proxiesobj"/>
+                    </span>
+
+                </div>
+
+             </div>
+         </div>
+    </div>
+
+
+</div>
