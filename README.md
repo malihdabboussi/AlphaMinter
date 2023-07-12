@@ -28,3 +28,5 @@
 * Please visit our discord server : https://discord.gg/Wr3N7HV2VC
 * Twitter Page : https://twitter.com/AlphaMinter101
 * for any more details my discord account : wing#5708 or AM#4124
+
+* <img width="1392" alt="Screen Shot 2023-07-12 at 12 50 47 PM" src="https://github.com/malihdabboussi/AlphaMinter/assets/73035615/e9780870-e20e-4463-b679-50b2a366b1ad">
