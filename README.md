@@ -35,11 +35,11 @@
 
 * Creating Wallet Groups
 
-** ![image](https://github.com/malihdabboussi/AlphaMinter/assets/73035615/5dc40347-271b-4f7d-89cc-aaf84f5d8480)
+![image](https://github.com/malihdabboussi/AlphaMinter/assets/73035615/5dc40347-271b-4f7d-89cc-aaf84f5d8480)
   
 * Generate Wallet
 
-** ![image](https://github.com/malihdabboussi/AlphaMinter/assets/73035615/1ccdbfd6-4bb5-419e-a1d2-3e0bbc83012d)
+![image](https://github.com/malihdabboussi/AlphaMinter/assets/73035615/1ccdbfd6-4bb5-419e-a1d2-3e0bbc83012d)
 
 ### Minters Groups ###
 
@@ -47,17 +47,17 @@
 
 * Create Minter
 
-** ![image](https://github.com/malihdabboussi/AlphaMinter/assets/73035615/03e80239-6d5e-4628-a39d-5d715eb524c4)
+![image](https://github.com/malihdabboussi/AlphaMinter/assets/73035615/03e80239-6d5e-4628-a39d-5d715eb524c4)
 
 ### Tasks ###
 
 * Create Sniper
 
-** ![image](https://github.com/malihdabboussi/AlphaMinter/assets/73035615/5584a4bd-4b2c-48d3-b362-8d4355c6fa81)
+![image](https://github.com/malihdabboussi/AlphaMinter/assets/73035615/5584a4bd-4b2c-48d3-b362-8d4355c6fa81)
 
 * List NFT of the selected Wallet
 
-** ![image](https://github.com/malihdabboussi/AlphaMinter/assets/73035615/dedd9335-3864-4a33-bbd5-f61cd294a839)
+![image](https://github.com/malihdabboussi/AlphaMinter/assets/73035615/dedd9335-3864-4a33-bbd5-f61cd294a839)
 
 ### Settings ###
 
