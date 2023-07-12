@@ -29,4 +29,36 @@
 * Twitter Page : https://twitter.com/AlphaMinter101
 * for any more details my discord account : wing#5708 or AM#4124
 
-* <img width="1392" alt="Screen Shot 2023-07-12 at 12 50 47 PM" src="https://github.com/malihdabboussi/AlphaMinter/assets/73035615/e9780870-e20e-4463-b679-50b2a366b1ad">
+### Wallets Groups ###
+
+![image](https://github.com/malihdabboussi/AlphaMinter/assets/73035615/5d255a41-744f-4593-ae12-db13a195edc2)
+
+* Creating Wallet Groups
+* 
+** ![image](https://github.com/malihdabboussi/AlphaMinter/assets/73035615/5dc40347-271b-4f7d-89cc-aaf84f5d8480)
+  
+*Generate Wallet
+
+**![image](https://github.com/malihdabboussi/AlphaMinter/assets/73035615/1ccdbfd6-4bb5-419e-a1d2-3e0bbc83012d)
+
+### Minters Groups ###
+
+![image](https://github.com/malihdabboussi/AlphaMinter/assets/73035615/64110bbb-2539-48f2-93a8-e0c9dd40ab33)
+
+*Create Minter
+
+**![image](https://github.com/malihdabboussi/AlphaMinter/assets/73035615/03e80239-6d5e-4628-a39d-5d715eb524c4)
+
+### Tasks ###
+
+*Create Sniper
+
+**![image](https://github.com/malihdabboussi/AlphaMinter/assets/73035615/5584a4bd-4b2c-48d3-b362-8d4355c6fa81)
+
+*List NFT of the selected Wallet
+
+**![image](https://github.com/malihdabboussi/AlphaMinter/assets/73035615/dedd9335-3864-4a33-bbd5-f61cd294a839)
+
+### Settings ###
+
+<img width="1392" alt="Screen Shot 2023-07-12 at 12 50 47 PM" src="https://github.com/malihdabboussi/AlphaMinter/assets/73035615/e9780870-e20e-4463-b679-50b2a366b1ad">
